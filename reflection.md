@@ -11,6 +11,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 The game was a simple Streamlit app that had a title, a message indicating I should guess a number between 1 and 100, displaying that I had 7 attempts left, with buttons to submit my guess after I type it in the text box, start a new game, and a checkbox to indicate if I wanted to show hints or not which defaulted to yes. It also had a sidebar that allowed me to set my difficulty (Easy, Normal, or Hard), showed me the range that the secret number would (should) be in, and how many attempts I was allowed.
 
 Bugs that I noticed immediately is that the hints would tell me to go in the opposite direction of the actual secret number, my attempts didn't go down when I hit submit guess, but when I guessed my next number (which is a little weird), the new game button doesn't reset the game just the secret number but you can't actually play twice in a row, and the game without the hints is kind of impossible, so not sure why it's even an option to begin with. Also, the amount of guesses starts at 7 initially, but when you hit new game it resets to 8.
+
 ---
 
 ## 2. How did you use AI as a teammate?
@@ -31,6 +32,7 @@ I used the Copilot agent within VS Code. One AI suggestion that I accepted was t
 - Did AI help you design or understand any tests? How?
 
 I decided a bug was fixed when I tested it myself on the app. Just the tests passing wasn't enough. So I would go into the app and start from different states to make sure my fixes worked as intented. One manual test I ran was the New Game button. I wanted to make sure that it really reset the game state, so I tried it both when I was in the middle of an ongoing game and when I had won and lost a game. It showed me that the button actually worked, and that the test cases that I wrote with AI were correct. Copilot helped me write all my new unit tests. I would tell it that I wanted to test a certain fix that I implemented, and it would write a test for me. Then, I would verify that the test seemed to be doing what I wanted it to do, and if not, I would iterate with the agent until it created something that I was happy with.
+
 ---
 
 ## 4. What did you learn about Streamlit and state?
@@ -39,7 +41,7 @@ I decided a bug was fixed when I tested it myself on the app. Just the tests pas
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 - What change did you make that finally gave the game a stable secret number?
 
-I did not experience the secret number changing during a game. I only noticed it when I would hit the "New Game" button and the secret number would change but none of the other variables would reset for a new game to start. I would explain a rerun as having to manually reset session state variables to their "default" values because it can't do it automatically for you. You have to explicitly tell it what values are default because it doesn't know on its own. The change I made that solved the problem was fixing the New Game button to reset not only the secret number, but also return the attempts and score states to 0 and clearing the history to an empty dictionary.
+I did not experience the secret number changing during a game. I only noticed it when I would hit the "New Game" button and the secret number would change but none of the other variables would reset for a new game to start. I would explain a rerun as having to manually reset session state variables to their "default" values because Streamlit can't do it automatically for you. You have to explicitly tell it what values are default because it doesn't know on its own. The change I made that solved the problem was fixing the New Game button to reset not only the secret number, but also return the attempts and score states to 0 and clearing the history to an empty dictionary.
 
 ---
 
