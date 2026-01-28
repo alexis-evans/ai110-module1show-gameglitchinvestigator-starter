@@ -24,5 +24,5 @@ It wrote the code, ran away, and now the game is unplayable.
    - Keep fixing until all tests pass!
 
 ## 📸 Demo
+<img width="1248" height="1220" alt="Game Glitch Winning Game Screenshot" src="https://github.com/user-attachments/assets/2a1092fe-6bd6-4ca3-a992-cb16849a99a1" />
 
-[Insert screenshot of your fixed, winning game here]
